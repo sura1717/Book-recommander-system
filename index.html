@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book recommander system</title>
+
+<style>
+
+
+    .image{
+        height: 25vh;
+        width: 18vh;
+        margin-right:40px;
+    }
+
+    .book-details{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        color: white;
+        margin-right:40px;
+    }
+
+    .nva-navbar{
+        margin-top: 50px;
+        margin-left:20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>
+
+
+</head>
+<body style="background-color: black;">
+
+    <div class="navbar" style="background-color: green;">
+        <a> my recommander</a>
+        <ul>
+            <li><a href="/recommand">Recommand</a></li>
+            <li><a href="/"> Home</a></li>
+        </ul>
+    </div>
+
+    <div> <h1 style="color: antiquewhite">Top 50 Books</h1></div>
+<div class="nva-navbar" style="margin-top: 50px;">
+{% for i in range(book_name|length) %}
+
+<!--    <div class="nva-navbar" style="margin-top: 50px;">-->
+        <div>
+            <img class="image" src="{{ image[i]}}">
+            <h3 class="book-details">{{book_name[i]}}</h3>
+            <p class = "book-details">{{author[i]}}</p>
+            <p class = "book-details">votes : {{votes[i]}}</p>
+            <p class = "book-details">Rating : {{rating[i]}}</p>
+        </div>
+<!--    </div>-->
+
+{% endfor %}
+</div>
+</body>
+</html>

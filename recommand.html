@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book recommander system</title>
+
+<style>
+    .image{
+        height: 30vh;
+        width: 22vh;
+    }
+    .book-details{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        color: white;
+
+    }
+      .nva-navbar{
+        margin-top: 30px;
+        margin-left:20px;
+        display: flex;
+        flex-wrap: wrap;
+        font-size:120%;
+    }
+    .eachbook{
+        margin-top:30px;
+        margin-right:50px;
+    }
+
+</style>
+
+
+</head>
+<body style="background-color: black;">
+
+    <div class="navbar" style="background-color: green;">
+        <a> my recommander</a>
+        <ul>
+            <li><a href="/recommand">Recommand</a></li>
+            <li><a href="/"> Home</a></li>
+        </ul>
+    </div>
+
+
+    <form action="/recommand_books" method="post" class="requireds">
+        <input name="user_input" type="text" class="form-control">
+        <button type="submit">recommand</button>
+
+    </form>
+
+{% if data%}
+<div class="nva-navbar">
+<!--    <h3 style="color:white">{{data}}</h3>-->
+    {% for i in data %}
+<!--    <div class="nva-navbar">-->
+        <div class="eachbook">
+
+            <img class="image" src={{i[2]}}>
+            <h4 class="book-details" style=" font-size:12px;">{{i[0]}}</h4>
+            <p class = "book-details" style="font-weight:bold;">{{i[1]}}</p>
+
+        </div>
+
+    {% endfor %}
+ </div>
+{% endif%}
+
+</body>
+</html>
